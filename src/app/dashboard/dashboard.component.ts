@@ -35,12 +35,13 @@ add(){
   this.router.navigateByUrl("addproduct");
 }
 Search(){
-    console.log(this.search);
+   
     var search=this.search;
     this.dataservice.search(search)
     .subscribe((result:any)=>{
       if(result){
         alert(result.message);
+        console.log(result.message);
       } 
     },
     (result)=>{

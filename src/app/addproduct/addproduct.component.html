@@ -15,7 +15,7 @@
             <input type="number" placeholder="Quantity" class="text" name="qty" formControlName="qty">
             <div class="error"  *ngIf="(addform.get('qty')?.touched || addform.get('qty')?.dirty) && addform.get('qty')?.errors">Invalid accountnumber</div><br><br>
             
-<select name="select" >
+<select name="category" formControlName="category">
 <option value = "BMW"> BMW 
 </option>
 <option value = "Mercedes"> Mercedes 

@@ -29,11 +29,12 @@ export class DataService {
     
 
   }
-  add(name:any,price:any,qty:any){
+  add(name:any,price:any,qty:any,category:any){
     const data={
       name:name,
       price:price,
-      qty:qty
+      qty:qty,
+      category:category
     }
     console.log(data);
     return this.http.post('http://localhost:3000/add',data,options)
@@ -42,7 +43,9 @@ export class DataService {
       return this.http.post('http://localhost:3000/displayProducts',options)
     }
     search(search:any){
-      
-      return this.http.get("http://localhost:3000/search")
+      const data={
+        search
+      }
+      return this.http.post("http://localhost:3000/search",data,options)
     }
 }
