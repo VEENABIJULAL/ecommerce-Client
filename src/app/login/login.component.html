@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="main">
+                <img src="../../assets/logo.png" alt="">
+                <h4>Login </h4>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <input type="text" placeholder="User Name"  class="text" name="name" formControlName="name" >
+            <div class="error"  *ngIf="(loginForm.get('name')?.touched || loginForm.get('name')?.dirty) && loginForm.get('name')?.errors">Invalid username</div><br><br>
+
+            <input type="password" placeholder="password" class="text" name="pswd" formControlName="pswd">
+            <div class="error"  *ngIf="(loginForm.get('pswd')?.touched || loginForm.get('pswd')?.dirty) && loginForm.get('pswd')?.errors">Invalid password</div><br><br>
+
+            <input type="submit" value="Login" class="bn" ><br><br>
+            <a routerLink="register">Sign Up</a>
+            
+            </form>    
+            
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+

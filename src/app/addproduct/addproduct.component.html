@@ -1,0 +1,40 @@
+<div class="container">
+    <div class="row">
+        <div class="col-4"></div>
+        <div class="col-4">
+            <div class="main">
+                <img src="../../assets/logo.png" alt="">
+                <h4>Add Product </h4>
+            <form [formGroup]="addform" (ngSubmit)="add()">
+            <input type="text" placeholder=" Name"  class="text" name="name" formControlName="name" >
+            <div class="error"  *ngIf="(addform.get('name')?.touched || addform.get('name')?.dirty) && addform.get('name')?.errors">Invalid accountnumber</div><br><br>
+
+            <input type="number" placeholder="Price" class="text" name="price" formControlName="price">
+            <div class="error"  *ngIf="(addform.get('price')?.touched || addform.get('price')?.dirty) && addform.get('price')?.errors">Invalid accountnumber</div><br><br>
+
+            <input type="number" placeholder="Quantity" class="text" name="qty" formControlName="qty">
+            <div class="error"  *ngIf="(addform.get('qty')?.touched || addform.get('qty')?.dirty) && addform.get('qty')?.errors">Invalid accountnumber</div><br><br>
+            
+<select name="select" >
+<option value = "BMW"> BMW 
+</option>
+<option value = "Mercedes"> Mercedes 
+</option>
+<option value = "Audi"> Audi
+</option>
+<option value = "Skoda"> Skoda
+</option>
+</select><br><br>
+
+            <input type="submit" value="Add" class="bn" ><br><br>
+        
+            
+            </form>    
+            
+            </div>
+        </div>
+        <div class="col-4"></div>
+    </div>
+</div>
+
+

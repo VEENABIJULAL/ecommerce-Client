@@ -1,0 +1,70 @@
+<img src="../../assets/logo.png" alt="">
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <div class="main">
+               
+                <h2>Dashboard </h2>
+                <button class="addproduct" (click)="add()">Add Product</button><br><br>
+             <div class="row">
+                 <div class="col-6">
+                    <input type="text" placeholder="Search"  class="text" name="search" [(ngModel)]="search" >
+                 </div>
+                 <div class="col-3">
+                    <select name="select"  >
+                        <option value = "BMW"> BMW 
+                        </option>
+                        <option value = "Mercedes"> Mercedes 
+                        </option>
+                        <option value = "Audi"> Audi
+                        </option>
+                        <option value = "Skoda"> Skoda
+                        </option>
+                    </select>
+                 </div>
+                 <div class="col-3">
+                    <button (click)="Search()">Search</button>
+                 </div>
+             </div><br>
+             <table >
+                <tr>
+                  <th>Product Name</th>
+                  <th>Price</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+                <tr *ngFor="let product of Products">
+                  <td>{{product['Name']}}</td>
+                  <td>{{product['Price']}}</td>
+                  <td>edit</td>
+                  <td>delete</td>
+                </tr>
+                
+              </table>
+            </div>
+        </div>
+        <div class="col-3">
+
+        </div>
+    </div>
+    <h1>Latest Products </h1>
+    <div class="row" >
+        <div class="col-3 " *ngFor="let product of Products">
+            
+            <div class="form-group">
+                <h5>{{product['Name']}}</h5>
+                <h5 class="dollar">{{product['Price']}}</h5>
+            </div>
+        </div>
+        <div class="col-3 ">
+            
+        </div>
+        <div class="col-3 ">
+            
+        </div>
+        <div class="col-3 ">
+           
+        </div>
+    </div>
+</div>
